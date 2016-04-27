@@ -22,7 +22,7 @@ class SettingsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:format])
+    @user = User.find(params[:id])
   end
 
 end

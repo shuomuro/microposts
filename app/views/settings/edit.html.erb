@@ -1,4 +1,5 @@
 <h1>登録情報変更</h1>
+<p>プロフィールや居住地を追加できます</p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -6,18 +7,18 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :profile %>
-      <%= f.text_field :profile %>
+      <%= f.text_field :profile, class: 'form-control' %>
 
       <%= f.label :location %>
-      <%= f.text_field :location %>
+      <%= f.text_field :location, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Edit my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
