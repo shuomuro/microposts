@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, :authenticate_user, only: [:edit, :update]
 
   def show
    @user = User.find(params[:id])
@@ -41,6 +41,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def authenticate_user
+    unless User.find(params[:id]) == current_user
+      flash[:fail] = "アクセス出来ません"
+      redirect_to edit_user_path(current_user)
+    end
   end
 
 end
