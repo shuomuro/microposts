@@ -1,8 +1,8 @@
 <h1>登録情報変更</h1>
-<p>プロフィールや居住地を追加できます</p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+  <p>プロフィールや居住地を追加できます</p>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -12,10 +12,10 @@
       <%= f.label :email %>
       <%= f.text_field :email, class: 'form-control' %>
 
-      <%= f.label :profile %>
-      <%= f.text_field :profile, class: 'form-control' %>
+      <%= f.label :profile %>（任意）
+      <%= f.text_area :profile, class: 'form-control' %>
 
-      <%= f.label :location %>
+      <%= f.label :location %>（任意）
       <%= f.text_field :location, class: 'form-control' %>
 
       <%= f.submit "Edit my account", class: "btn btn-large btn-primary" %>
