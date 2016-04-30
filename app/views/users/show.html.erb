@@ -10,7 +10,9 @@
       <li>Profile：<%= @user.profile %></li>
       <li>Location：<%= @user.location %></li>
     </ul>
-    <p style="text-align: right;"><%= link_to "登録情報を変更する", edit_user_path(current_user) %></p>
+    <% if logged_in? && @user == current_user %>
+      <p style="text-align: right;"><%= link_to "登録情報を変更する", edit_user_path(@user) %></p>
+    <% end %>
   </div>
 </div>
 

@@ -12,6 +12,12 @@
       <%= f.label :email %>
       <%= f.text_field :email, class: 'form-control' %>
 
+      <%= f.label :password %>（変更しない場合は空欄のままとして下さい）
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>（変更しない場合は空欄のままとして下さい）
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
       <%= f.label :profile %>（任意）
       <%= f.text_area :profile, class: 'form-control' %>
 
