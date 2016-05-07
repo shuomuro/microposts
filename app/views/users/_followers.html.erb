@@ -1,13 +1,13 @@
-<% @user.follower_users.each do |f| %>
+<% @user.follower_users.each do |u| %>
   <div class="row follow_user">
     <div class="follow_user_info col-sm-4">
       <%= gravatar_for(@user, size: 50) %>
-      <p><span class="follow_user_name"><%= link_to f.name, user_path(f), :class => "user_name" %></span><br>
-      <%= pluralize(f.microposts.count, "micropost") %></p>
-      <%= render 'follow_form_following', f:f if logged_in? %>
+      <p><span class="follow_user_name"><%= link_to u.name, user_path(u), :class => "user_name" %></span><br>
+      <%= pluralize(u.microposts.count, "micropost") %></p>
+      <%= render 'follow_form_following', u:u if logged_in? %>
     </div>
     <div class="follow_user_profile col-sm-8">
-      <p><%= f.profile if f.profile != nil %></p>
+      <p><%= u.profile if u.profile != nil %></p>
     </div>
   </div>
 <% end %>
