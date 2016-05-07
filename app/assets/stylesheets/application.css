@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+.follow_user {
+  margin: 10px 3px 10px 3px;
+  padding: 5px 0px 5px 0px;
+  border: thin solid gainsboro;
+  border-radius: 2%;
+  background-color: whitesmoke;
+}
+
+.follow_user_name {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+a:link.user_name {
+  color:black;
+}
+a:visited.user_name {
+  color:black;
+}

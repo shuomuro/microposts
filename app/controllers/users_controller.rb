@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :followings, :followers]
   before_action :authenticate_user, only: [:edit, :update]
 
   def show
@@ -33,6 +33,12 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
+  def followings
+  end
+
+  def followers
+  end
 
   private
 
@@ -42,7 +48,11 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    if User.find_by_id(params[:id]) == nil
+      redirect_to root_path
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   def authenticate_user
