@@ -3,7 +3,7 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= link_to @user.name, user_path(@user), :class => "user_name" %>
       </h1>
     </section>
     <ul>
@@ -20,7 +20,7 @@
   <div class="col-md-8">
     <% if @user.follower_users.any? %>
       <h3>フォロワー (<%= @user.follower_users.count %>)</h3>
-        <%= render 'users/followers' %>
+        <%= render 'users/list/followers' %>
     <% else %><h3>フォロワー (<%= @user.follower_users.count %>)</h3>
     <% end %>
 

@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def followers
   end
 
+
   private
 
   def user_params
