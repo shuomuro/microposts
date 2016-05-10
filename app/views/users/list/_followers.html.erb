@@ -1,9 +1,13 @@
 <% @user.follower_users.each do |u| %>
   <div class="row follow_user">
     <div class="follow_user_info col-sm-4">
-      <%= gravatar_for(@user, size: 50) %>
+      <%= gravatar_for(@user, size: 65) %>
       <p><span class="follow_user_name"><%= link_to u.name, user_path(u), :class => "user_name" %></span><br>
-      <%= pluralize(u.microposts.count, "micropost") %></p>
+      <%= pluralize(u.microposts.count, "micropost") %>
+      <% if current_user.following?(u) && current_user.follower?(u) %>
+        <br><span class="label label-primary">あなたと相互フォロー中</span><br>
+      <% end %>
+      </p>
       <%= render 'users/list/follow_form_following', u:u if logged_in? %>
     </div>
     <div class="follow_user_profile col-sm-8">

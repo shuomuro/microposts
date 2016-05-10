@@ -33,3 +33,7 @@ a:link.user_name {
 a:visited.user_name {
   color:black;
 }
+
+.follow_user_info img {
+  margin-bottom: 10px;
+}

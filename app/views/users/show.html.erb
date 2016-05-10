@@ -5,6 +5,11 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% if current_user != @user %>
+      <% if current_user.following?(@user) && current_user.follower?(@user) %>
+            <span class="label label-primary">相互フォロー中</span><br>
+      <% end %>
+      <% end %>
     </section>
     <ul>
       <li>Profile：<%= @user.profile %></li>
